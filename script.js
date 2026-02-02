@@ -1,7 +1,6 @@
-//your JS code here. If required.
 const fontSizeInput = document.getElementById("fontsize");
 const fontColorInput = document.getElementById("fontcolor");
-const form = document.getElementById("font-form");
+const form = document.querySelector("form"); // ✅ FIX (safe)
 
 // Set cookie
 function setCookie(name, value) {
@@ -13,9 +12,7 @@ function getCookie(name) {
   const cookies = document.cookie.split("; ");
   for (let cookie of cookies) {
     const [key, value] = cookie.split("=");
-    if (key === name) {
-      return value;
-    }
+    if (key === name) return value;
   }
   return null;
 }
